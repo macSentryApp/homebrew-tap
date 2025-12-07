@@ -16,7 +16,6 @@ class Macsentry < Formula
   def install
     # Install Python files
     libexec.install "macos_security_audit.py"
-    libexec.install "gui.py"
     libexec.install "checks"
     libexec.install "utils"
     libexec.install "core"
@@ -28,12 +27,6 @@ class Macsentry < Formula
     (bin/"macsentry").write <<~EOS
       #!/bin/bash
       exec "#{Formula["python@3.11"].opt_bin}/python3" "#{libexec}/macos_security_audit.py" "$@"
-    EOS
-
-    # Create GUI launcher
-    (bin/"macsentry-gui").write <<~EOS
-      #!/bin/bash
-      exec "#{Formula["python@3.11"].opt_bin}/python3" "#{libexec}/gui.py" "$@"
     EOS
 
     # Install helper script to set up scheduled scanning
@@ -125,9 +118,6 @@ PLIST
 
       Run a security audit:
         macsentry
-
-      Launch the GUI:
-        macsentry-gui
 
       Schedule daily audits (9:00 AM):
         macsentry-install
