@@ -16,6 +16,7 @@ class Macsentry < Formula
   def install
     # Install Python files
     libexec.install "macos_security_audit.py"
+    libexec.install "cli.py"
     libexec.install "checks"
     libexec.install "utils"
     libexec.install "core"
@@ -26,7 +27,7 @@ class Macsentry < Formula
     # Create main CLI wrapper script
     (bin/"macsentry").write <<~EOS
       #!/bin/bash
-      exec "#{Formula["python@3.11"].opt_bin}/python3" "#{libexec}/macos_security_audit.py" "$@"
+      exec "#{Formula["python@3.11"].opt_bin}/python3.11" "#{libexec}/macos_security_audit.py" "$@"
     EOS
 
     # Install helper script to set up scheduled scanning
@@ -38,7 +39,7 @@ class Macsentry < Formula
       PLIST_TARGET="$HOME/Library/LaunchAgents/com.macsentry.plist"
       LOG_DIR="$HOME/Library/Logs/macsentry"
       AUDIT_SCRIPT="#{libexec}/macos_security_audit.py"
-      PYTHON_BIN="#{Formula["python@3.11"].opt_bin}/python3"
+      PYTHON_BIN="#{Formula["python@3.11"].opt_bin}/python3.11"
       DOMAIN_TARGET="gui/$(id -u)"
 
       echo "Installing macSentry scheduled audit..."
