@@ -1,6 +1,6 @@
 # Homebrew Tap for macSentry
 
-This is the official Homebrew tap for [macSentry](https://github.com/macSentryApp/macSentry), an automated security auditing tool for macOS.
+This is the official Homebrew tap for [macSentry](https://github.com/macSentryApp/macos-security-audit), an automated security auditing tool for macOS.
 
 ## Installation
 
@@ -24,14 +24,16 @@ brew install macSentryApp/tap/macsentry
 # Run a security audit
 macsentry
 
-# Launch the GUI
-macsentry-gui
-
 # Schedule daily audits
 macsentry-install
 
+# Remove scheduled audits
+macsentry-uninstall
+
 # More options
 macsentry --help
+macsentry --format json -o report.json
+macsentry --format html -o report.html
 ```
 
 ## Formulas
@@ -40,11 +42,20 @@ macsentry --help
 |---------|-------------|
 | `macsentry` | Automated security auditing and monitoring tool for macOS |
 
+## Alternative Installation
+
+You can also install macSentry via pipx (no Homebrew required):
+
+```bash
+pipx install macSentry
+```
+
 ## Links
 
-- **Homepage**: [github.com/macSentryApp/macSentry](https://github.com/macSentryApp/macSentry)
-- **Documentation**: [Check Reference](https://github.com/macSentryApp/macSentry#check-reference)
-- **Issues**: [Report a bug](https://github.com/macSentryApp/macSentry/issues)
+- **Homepage**: [github.com/macSentryApp/macos-security-audit](https://github.com/macSentryApp/macos-security-audit)
+- **Documentation**: [README](https://github.com/macSentryApp/macos-security-audit#readme)
+- **Issues**: [Report a bug](https://github.com/macSentryApp/macos-security-audit/issues)
+- **PyPI**: [pypi.org/project/macSentry](https://pypi.org/project/macSentry/)
 
 ## License
 
