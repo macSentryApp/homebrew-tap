@@ -8,7 +8,7 @@ class Macsentry < Formula
   desc "Automated security auditing and monitoring tool for macOS"
   homepage "https://github.com/macSentryApp/macos-security-audit"
   url "https://github.com/macSentryApp/macos-security-audit/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "0dd02d774ff5e149ee0bbdf4961d8b2e4d4d8c9ba4115bcb13ae1f6f7064dcce"
+  sha256 "e05349d3860e9b739a30f4b68288c3a41edf653b9aaf0714acb7b54660053e95"
   license "MIT"
   head "https://github.com/macSentryApp/macos-security-audit.git", branch: "main"
 
